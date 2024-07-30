@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading Your Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="../static/style.css">
+    <style>
+        .container{
+        padding: 10px;
+        margin: 100px;
+        display: flex;
+        flex-direction: column;
+
+        }
+          h2 {
+    font-family: 'Courier New', monospace;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: grey;
+    margin-left: 0;
+}
+        button{
+        margin: 10px;
+        }
+         img {
+    width: 700px;
+    height: 600px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 50px;
+    margin-right: 20px;
+  }
+    </style>
+</head>
+
+<body>
+<!--background-->
+<div class="lines">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
+<h2>Loading Data from your Drive...</h2>
+<div class="container">
+<div class="instruction-section">
+  <div><h3>Load Data:</h3></div>
+  <ol>
+    <li>Click on the "Load Data" button.</li>
+    <li>Select the dataset (CSV format) from your local drive.</li>
+    <li>Click "Confirm" to load the data.</li>
+  </ol>
+</div>
+</div>
+<p style="margin-left:30px;">Proceed to File upload</p>
+<form  id="loadDataForm" action="/load_data" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <input type="file" id="file" name="file" accept=".csv" style="display: none;">
+    <button type="button" class="btn btn-primary" onclick="chooseFile()">Load Data</button>
+  </div>
+  <button type="submit" name="confirm" class="btn btn-primary" onclick="return confirmAndRedirect();">Confirm</button>
+</form>
+  <div class="col-md-6 image-container">
+            <img src="../static/ml.png" alt="Machine Learning">
+        </div>
+<script>
+  function chooseFile() {
+    document.getElementById("file").click();
+  }
+
+  function confirmAndRedirect() {
+    var fileInput = document.getElementById("file");
+    if (fileInput.files.length === 0) {
+      alert("Please select a file.");
+      return false;
+    }
+
+    var userConfirmed = confirm("Confirm File Submission");
+
+    if (userConfirmed) {
+      document.getElementById("loadDataForm").submit();
+      return true;
+    }
+    return false;
+  }
+</script>
+</body>
+</html>

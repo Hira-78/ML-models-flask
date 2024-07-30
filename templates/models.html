@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Models Implementation</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+ <style>
+        body {
+    height: 100vh;
+    background-color: #171717;
+}
+
+.card {
+    margin: 10px;
+}
+
+img {
+    width: 200px;
+    height: 170px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px;
+    flex-direction: row;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 380px;;
+    height: 300px;
+    border: 3px solid grey;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 4px;
+}
+
+.card-title {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+h2 {
+    font-family: 'Courier New', monospace;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: grey;
+}
+     a{
+     margin-left: 20px;
+     }
+
+    </style>
+</head>
+<body>
+<!--background-->
+<div class="lines">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
+<h2>ML Models Category</h2>
+
+<div class="container d-flex flex-wrap">
+    <div class="col-md-4 mb-4">
+        <div class="card" style="background-color: #B0B0B0; height: 100%;">
+            <h5 class="card-title">Logistic Regression</h5>
+            <img src="../static/log_reg.png" class="card-img-top img-fluid" alt="Log_Reg">
+            <div class="card-body">
+                <p class="card-text">A linear model used for binary classification that predicts the probability of an instance belonging to a particular class.</p>
+                <form action="/models" method="post">
+                    <input type="hidden" name="logistic_regression" value="logistic_regression">
+                    <button type="submit" class="btn btn-primary">Apply Logistic Regression Algorithm</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card" style="background-color: 	#989898; height: 100%;">
+            <h5 class="card-title">Support Vector Machine</h5>
+            <img src="../static/svm2.jpeg" class="card-img-top img-fluid" alt="SVM">
+            <div class="card-body">
+                <p class="card-text">A powerful supervised learning algorithm for classification and regression tasks that finds the optimal hyperplane in a high-dimensional space to separate classes.</p>
+                <form action="/models" method="post">
+                    <input type="hidden" name="svm" value="svm">
+                    <button type="submit" class="btn btn-primary">Apply Support Vector Machine</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card" style="background-color: 	#B0B0B0; height: 100%;">
+            <h5 class="card-title">Decision Tree</h5>
+            <img src="../static/dt.jpeg" class="card-img-top img-fluid" alt="Decision Tree">
+            <div class="card-body">
+                <p class="card-text">A tree-like model where an instance is classified or predicted by traversing the tree from the root to a leaf node based on the attribute values of the features.</p>
+                <form action="/models" method="post">
+                    <input type="hidden" name="decision_tree" value="decision_tree">
+                    <button type="submit" class="btn btn-primary">Apply Decision Tree Algorithm</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card" style="background-color: 	#989898; height: 100%;">
+            <h5 class="card-title">Random Forest</h5>
+            <img src="../static/ran_for.jpg" class="card-img-top img-fluid" alt="Random forest">
+            <div class="card-body">
+                <p class="card-text">An ensemble learning method that builds multiple decision trees during training and outputs the mode of the classes (classification) or the mean prediction (regression) of the individual trees.</p>
+                <form action="/models" method="post">
+                    <input type="hidden" name="random_forest" value="random_forest">
+                    <button type="submit" class="btn btn-primary">Apply Random Forest Algorithm</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card" style="background-color: 	#B0B0B0; height: 100%;">
+            <h5 class="card-title">K Nearest Neighbor</h5>
+            <img src="../static/knn_alg.png" class="card-img-top img-fluid" alt="K-NN">
+            <div class="card-body">
+                <p class="card-text">A non-parametric algorithm that classifies a data point based on the majority class of its k nearest neighbors in the feature space.</p>
+                <form action="/models" method="post">
+                    <input type="hidden" name="knn" value="knn">
+                    <button type="submit" class="btn btn-primary">Apply K-Nearest Neighbor Algorithm</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <a href="/metrics" class="btn btn-primary">Go to Next Step</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-GLhlTQ8iK9tTQofERHk+ASWCr3fSI6CY9F6sAgFEJ/cPiitF81KcJf+1d47jjxwG" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: table;
+  width: 100%;
+  height: 100%;
+  color:white;
+  background-color: #171717;
+  line-height: 1.6;
+  position: relative;
+  font-family: sans-serif;
+  overflow: hidden;
+  z-index: 1;
+  overflow-y: auto;
+
+}
+
+.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 90vw;
+}
+
+.line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.line::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+  animation: drop 7s 0s infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+.line:nth-child(1) {
+  margin-left: -25%;
+  &::after {
+    animation-delay: 2s;
+  }
+}
+
+.line:nth-child(3) {
+  margin-left: 25%;
+  &::after {
+    animation-delay: 2.5s;
+  }
+}
+
+@keyframes drop {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+      .instruction-section {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background-color: #000; /* Black background */
+    border-radius: 8px;
+    margin: 20px 0;
+    color: #fff; /* White font color */
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ffcc; /* A light color for the heading */
+  }
+
+  ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+  }
+
+  li {
+    font-size: 16px;
+    padding: 8px 0;
+    color: #66ccff;
+}
+    .flashes{
+    color: red;
+    font-weight: bold;
+    }
+
+    .container {
+            max-width: 800px; /
+        }
+
+        .instruction-section,
+        form,
+        div {
+            text-align: center;
+        }
+
+        .image-container {
+            text-align: right;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 300px; }
